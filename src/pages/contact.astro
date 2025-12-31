@@ -1,0 +1,57 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Nav from "../components/Nav.astro";
+---
+
+<BaseLayout title="Contact | Jorge" lang="en">
+  <Nav lang="en" />
+
+  <main>
+  <h1>Contact</h1>
+  <p class="lead">
+    The fastest ways to reach me.
+  </p>
+
+  <div class="contact-grid">
+    <a class="contact-card" href="mailto:jtabuencaluque@gmail.com">
+      <div class="contact-icon">✉️</div>
+      <div>
+        <strong>Email</strong>
+        <p class="muted">Quick reply</p>
+        <p class="contact-value">Open here</p>
+      </div>
+      <span class="contact-arrow">→</span>
+    </a>
+
+    <a
+      class="contact-card"
+      href="https://www.linkedin.com/in/jorge-tabuenca-luque-0b8071386/"
+      target="_blank"
+      rel="noreferrer"
+    >
+      <div class="contact-icon">in</div>
+      <div>
+        <strong>LinkedIn</strong>
+        <p class="muted">Professional profile</p>
+        <p class="contact-value">View profile</p>
+      </div>
+      <span class="contact-arrow">→</span>
+    </a>
+
+    <a
+      class="contact-card"
+      href="/files/CV inica.pdf"
+      target="_blank"
+      rel="noreferrer"
+    >
+      <div class="contact-icon">📄</div>
+      <div>
+        <strong>CV</strong>
+        <p class="muted">Download PDF</p>
+        <p class="contact-value">Open CV</p>
+      </div>
+      <span class="contact-arrow">→</span>
+    </a>
+  </div>
+</main>
+</BaseLayout>

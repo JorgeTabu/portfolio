@@ -1,0 +1,58 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Nav from "../../components/Nav.astro";
+---
+
+<BaseLayout title="Contacto | Daniel" lang="es">
+  <Nav lang="es" />
+
+<main>
+  <h1>Contacto</h1>
+  <p class="lead">
+    Si quieres contactar conmigo, aquí tienes las vías más rápidas.
+  </p>
+
+  <div class="contact-grid">
+    <a class="contact-card" href="mailto:jtabuencaluque@gmail.com">
+      <div class="contact-icon">✉️</div>
+      <div>
+        <strong>Email</strong>
+        <p class="muted">Respuesta rápida</p>
+        <p class="contact-value">Open here</p>
+      </div>
+      <span class="contact-arrow">→</span>
+    </a>
+
+    <a
+      class="contact-card"
+      href="https://www.linkedin.com/in/jorge-tabuenca-luque-0b8071386/"
+      target="_blank"
+      rel="noreferrer"
+    >
+      <div class="contact-icon">in</div>
+      <div>
+        <strong>LinkedIn</strong>
+        <p class="muted">Perfil profesional</p>
+        <p class="contact-value">Ver perfil</p>
+      </div>
+      <span class="contact-arrow">→</span>
+    </a>
+
+    <a
+      class="contact-card"
+      href="/files/CV inica.pdf"
+      target="_blank"
+      rel="noreferrer"
+    >
+      <div class="contact-icon">📄</div>
+      <div>
+        <strong>CV</strong>
+        <p class="muted">Descargar en PDF</p>
+        <p class="contact-value">Abrir CV</p>
+      </div>
+      <span class="contact-arrow">→</span>
+    </a>
+  </div>
+</main>
+
+</BaseLayout>

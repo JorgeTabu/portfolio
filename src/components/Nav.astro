@@ -1,0 +1,103 @@
+---
+const { lang = "en" } = Astro.props;
+
+// Ruta actual (ej: "/", "/about", "/es/proyectos", etc.)
+const path = Astro.url.pathname;
+
+// Mapeo EN <-> ES (porque los slugs son distintos)
+const EN_TO_ES: Record<string, string> = {
+  "/": "/es/",
+  "/about": "/es/sobremi",
+  "/projects": "/es/proyectos",
+  "/contact": "/es/contacto",
+  "/skills": "/es/habilidades",
+};
+
+const ES_TO_EN: Record<string, string> = {
+  "/es/": "/",
+  "/es/sobremi": "/about",
+  "/es/proyectos": "/projects",
+  "/es/contacto": "/contact",
+  "/es/habilidades": "/skills",
+};
+
+// Normaliza posibles barras finales ("/es/" vs "/es")
+const normalize = (p: string) => {
+  if (p.length > 1 && p.endsWith("/")) return p.slice(0, -1);
+  return p;
+};
+
+const current = normalize(path);
+
+// Links del selector de idioma (mantener “misma página”)
+const toEnglish = ES_TO_EN[current] ?? "/"; // fallback
+const toSpanish = EN_TO_ES[current] ?? "/es/"; // fallback
+
+// Menú según idioma
+const items =
+  lang === "es"
+    ? [
+        { href: "/es/", label: "Inicio" },
+        { href: "/es/sobremi", label: "Sobre mí" },
+        { href: "/es/habilidades", label: "Habilidades" },
+        { href: "/es/proyectos", label: "Proyectos" },
+        { href: "/es/contacto", label: "Contacto" },
+      ]
+    : [
+        { href: "/", label: "Home" },
+        { href: "/about", label: "About" },
+        { href: "/skills", label: "Skills" },
+        { href: "/projects", label: "Projects" },
+        { href: "/contact", label: "Contact" },
+      ];
+---
+
+<header class="header">
+  <nav class="nav">
+    <div class="links">
+      {items.map((item) => (
+        <a href={item.href}>{item.label}</a>
+      ))}
+    </div>
+
+    <div class="lang">
+      <a href={toEnglish}>EN</a>
+      <a href={toSpanish}>ES</a>
+    </div>
+  </nav>
+</header>
+
+<style>
+  .header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  }
+
+
+  .nav {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 1rem 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .links,
+  .lang {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+</style>

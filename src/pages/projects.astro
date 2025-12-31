@@ -1,0 +1,106 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Nav from "../components/Nav.astro";
+---
+
+<BaseLayout title="Projects | Jorge" lang="en">
+  <Nav lang="en" />
+
+  <main>
+    <h1>Projects</h1>
+     <p class="lead">A selection of personal and academic projects.</p>
+     <hr class="hr" />
+
+   <section>
+  <h2>Personal Projects</h2>
+
+  <div class="grid">
+    <details>
+      <summary class="project-summary">
+        <div class="summary-left">
+          <img
+           class="project-logo"
+           src="/images/wallstreet.png"
+           alt="Website Logo"
+         />
+         <span>Website development</span>
+       </div>
+
+       <span class="chev">▾</span>
+     </summary>
+
+      <p>
+        Through this project, I developed practical skills in SEO, content writing,
+        and basic web design...
+      </p>
+    </details>
+
+    <details>
+      <summary class="project-summary">
+        <div class="summary-left">
+          <img
+           class="project-logo"
+           src="/images/espetup.png"
+           alt="Espet-Up Logo"
+         />
+         <span>Espet-Up</span>
+        </div>
+        <span class="chev">▾</span>
+      </summary>
+      <p>
+        Espet-Up is an association that I co-founded with the aim of promoting
+        entrepreneurship and a proactive mindset...
+      </p>
+      <p>
+        Through Espet-Up, we seek to create a space for knowledge sharing...
+      </p>
+    </details>
+  </div>
+</section>
+
+<section>
+  <h2>Academic Projects</h2>
+
+  <div class="grid">
+    <details>
+      <summary class="project-summary">
+        <div class="summary-left">
+             <span class="project-icon">🏠</span>
+             <span>Housing Market Analysis (Microeconomics)</span>
+        </div>
+
+        <span class="chev">▾</span>
+      </summary>
+      <p>
+        This project analyzed the current housing market from a microeconomic
+        perspective...
+      </p>
+    </details>
+
+    <details>
+      <summary class="project-summary">
+        <div class="summary-left">
+             <span class="project-icon">📊</span>
+             <span>EUR/USD Exchange Rate Analysis (Macroeconomics)</span>
+        </div>
+
+        <span class="chev">▾</span>
+     </summary>
+
+     <p>
+      Another project examined the evolution of the EUR/USD exchange rate in
+      relation to the Uncovered Interest Parity theory, assessing whether
+      empirical data supported the theoretical predictions over time.
+     </p>
+
+     <a
+       class="file-link"
+       href="/files/Eur_vs_Usd.xlsx"
+       target="_blank"
+     >📄 View full analysis (Excel)</a>
+   </details>
+
+  </div>
+</section>
+  </main>
+</BaseLayout>

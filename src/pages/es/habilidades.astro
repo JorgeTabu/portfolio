@@ -1,0 +1,116 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Nav from "../../components/Nav.astro";
+
+type Level = "beginner" | "intermediate" | "advanced";
+type Skill = { name: string; level: Level };
+
+const technicalSkills: Skill[] = [
+  { name: "Análisis técnico", level: "advanced" },
+  { name: "Investigación macroeconómica", level: "intermediate" },
+  { name: "Python (básico)", level: "beginner" },
+  { name: "Astro / Web (básico)", level: "beginner" },
+  { name: "SEO y redacción de contenidos", level: "intermediate" },
+];
+
+const personalSkills: Skill[] = [
+  { name: "Trabajo en equipo", level: "advanced" },
+  { name: "Trabajo bajo presión", level: "advanced" },
+  { name: "Comunicación", level: "intermediate" },
+  { name: "Organización y constancia", level: "advanced" },
+  { name: "Mentalidad proactiva", level: "advanced" },
+];
+
+const levelLabel: Record<Level, string> = {
+  beginner: "Inicial",
+  intermediate: "Intermedio",
+  advanced: "Avanzado",
+};
+---
+
+<BaseLayout title="Habilidades | Jorge" lang="es">
+  <Nav lang="es" />
+
+  <main>
+    <h1>Habilidades</h1>
+    <p class="lead">
+      Una visión estructurada de mis habilidades técnicas y personales.
+    </p>
+
+    <!-- Filtro -->
+    <div class="skills-filter" role="group" aria-label="Filtrar habilidades por nivel">
+      <button class="filter-btn is-active" type="button" data-filter="all">
+        Todas
+      </button>
+      <button class="filter-btn" type="button" data-filter="beginner">
+        Inicial
+      </button>
+      <button class="filter-btn" type="button" data-filter="intermediate">
+        Intermedio
+      </button>
+      <button class="filter-btn" type="button" data-filter="advanced">
+        Avanzado
+      </button>
+    </div>
+
+    <section class="skills-card">
+      <div class="skills-grid">
+        <!-- Técnicas -->
+        <div>
+          <h2>Habilidades técnicas</h2>
+          <ul class="skills-list">
+            {technicalSkills.map((s) => (
+              <li class="skill-item" data-level={s.level}>
+                <span class="skill-name">{s.name}</span>
+                <span class={`badge badge-${s.level}`}>
+                  {levelLabel[s.level as keyof typeof levelLabel]}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Personales -->
+        <div>
+          <h2>Habilidades personales</h2>
+          <ul class="skills-list">
+            {personalSkills.map((s) => (
+              <li class="skill-item" data-level={s.level}>
+                <span class="skill-name">{s.name}</span>
+                <span class={`badge badge-${s.level}`}>
+                  {levelLabel[s.level as keyof typeof levelLabel]}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <script is:inline>
+      const buttons = document.querySelectorAll(".filter-btn");
+      const items = document.querySelectorAll(".skill-item");
+
+      function setActive(btn) {
+        buttons.forEach((b) => b.classList.remove("is-active"));
+        btn.classList.add("is-active");
+      }
+
+      function applyFilter(level) {
+        items.forEach((item) => {
+          const itemLevel = item.getAttribute("data-level");
+          const show = level === "all" || itemLevel === level;
+          item.style.display = show ? "flex" : "none";
+        });
+      }
+
+      buttons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const level = btn.getAttribute("data-filter");
+          setActive(btn);
+          applyFilter(level);
+        });
+      });
+    </script>
+  </main>
+</BaseLayout>

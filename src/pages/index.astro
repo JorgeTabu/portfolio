@@ -1,16 +1,81 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Nav from "../components/Nav.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Jorge | Portfolio" lang="en">
+  <Nav lang="en" />
+
+  <main>
+      <div class="hero">
+       <div class="hero-text">
+         <h1>Jorge Tabuenca Luque</h1>
+         <div class="hero-icons">
+          <a href="mailto:jtabuencaluque@gmail.com" aria-label="Email">✉️</a>
+
+          <a
+            href="https://www.linkedin.com/in/jorge-tabuenca-luque-0b8071386"
+            target="_blank"
+            aria-label="LinkedIn"
+          >
+            in
+          </a>
+
+          <a
+            href="/files/CV inica.pdf"
+            target="_blank"
+            aria-label="CV"
+          >
+            📄
+          </a>
+        </div>
+       
+
+    <p class="lead">
+      I am a bilingual Economics and Business Administration student with a strong
+      analytical mindset and a proactive approach to continuous learning.
+    </p>
+
+    <p class="lead">
+      My main areas of interest include financial markets, macroeconomic analysis,
+      and the growing role of artificial intelligence in modern economies and
+      decision-making processes.
+    </p>
+  </div>
+  <img
+      class="avatar"
+      src="/images/jorge.png"
+      alt="Jorge Tabuenca Luque"
+    />
+  </div>
+
+    <hr class="hr" />
+
+    <h2>Explore</h2>
+
+    <div class="grid grid-2">
+      <div class="card explore-card">
+        <strong>About</strong>
+        <p class="muted">Background, mindset, and direction.</p>
+        <a href="/about">Go to About →</a>
+      </div>
+      <div class="card explore-card">
+        <strong>Skills</strong>
+        <p class="muted">Technical and analytical competencies.</p>
+        <a href="/skills">Go to Skills →</a>
+      </div>
+
+      <div class="card explore-card">
+        <strong>Projects</strong>
+        <p class="muted">Personal and academic projects.</p>
+        <a href="/projects">Go to Projects →</a>
+      </div>
+
+      <div class="card explore-card">
+        <strong>Contact</strong>
+        <p class="muted">Email and LinkedIn.</p>
+        <a href="/contact">Go to Contact →</a>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

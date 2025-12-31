@@ -1,0 +1,84 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Nav from "../../components/Nav.astro";
+---
+
+<BaseLayout title="Jorge | Portafolio" lang="es">
+  <Nav lang="es" />
+
+  <main>
+    <div class="hero">
+      <div class="hero-text">
+        <h1>Jorge Tabuenca Luque</h1>
+
+        <div class="hero-icons">
+          <a href="mailto:jtabuencaluque@gmail.com" aria-label="Email">✉️</a>
+
+          <a
+            href="https://www.linkedin.com/in/jorge-tabuenca-luque-0b8071386"
+            target="_blank"
+            aria-label="LinkedIn"
+          >
+            in
+          </a>
+
+          <a
+            href="/files/CV inica.pdf"
+            target="_blank"
+            aria-label="CV"
+          >
+            📄
+          </a>
+        </div>
+
+        <p class="lead">
+          Soy estudiante del doble grado bilingüe en Economía y Administración de
+          Empresas, con una mentalidad analítica y una actitud proactiva hacia el
+          aprendizaje continuo.
+        </p>
+
+        <p class="lead">
+          Mis principales áreas de interés son los mercados financieros, el análisis
+          macroeconómico y el impacto creciente de la inteligencia artificial en la
+          economía.
+        </p>
+      </div>
+
+      <img
+        class="avatar"
+        src="/images/jorge.png"
+        alt="Jorge Tabuenca Luque"
+      />
+    </div>
+
+    <hr class="hr" />
+
+    <h2>Explorar</h2>
+
+    <div class="grid grid-2">
+      <div class="card explore-card">
+        <strong>Sobre mí</strong>
+        <p class="muted">Contexto, mentalidad y dirección.</p>
+        <a href="/es/sobremi">Ir a Sobre mí →</a>
+      </div>
+    
+      <div class="card explore-card">
+        <strong>Habilidades</strong>
+        <p class="muted">Habilidades técnicas y profesionales.</p>
+        <a href="/es/habilidades">Ir a Habilidades →</a>
+      </div>
+
+      <div class="card explore-card">
+        <strong>Proyectos</strong>
+        <p class="muted">Proyectos personales y académicos.</p>
+        <a href="/es/proyectos">Ir a Proyectos →</a>
+      </div>
+
+      <div class="card explore-card">
+        <strong>Contacto</strong>
+        <p class="muted">Email y LinkedIn.</p>
+        <a href="/es/contacto">Ir a Contacto →</a>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

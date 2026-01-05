@@ -62,9 +62,11 @@ const {
 
   </head>
 
-<body>
-  <Navbar />
-  <slot />
-</body>
+  <body>
+    <Navbar lang={lang} />
+    <div class="container">
+      <slot />
+    </div>
+  </body>
 
 </html>

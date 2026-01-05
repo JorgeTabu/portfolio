@@ -3,8 +3,16 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Nav from "../../components/Nav.astro";
 ---
 
-<BaseLayout title="Sobre mí | Jorge" lang="es">
-  <Nav lang="es" />
+<BaseLayout
+  title="Sobre mí | Jorge"
+  description="Breve bio y trayectoria de Jorge Tabuenca."
+  lang="es"
+  canonical="https://jorgetabuenca.com/es/sobremi"
+  alternates={[
+    { lang: "es", href: "https://jorgetabuenca.com/es/sobremi" },
+    { lang: "en", href: "https://jorgetabuenca.com/about" },
+  ]}
+>
 
   <main>
     <h1>Sobre mí</h1>

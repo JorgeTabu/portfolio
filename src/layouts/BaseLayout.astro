@@ -6,13 +6,21 @@ type Alternate = {
   href: string;
 };
 
+type LayoutProps = {
+  title?: string;
+  description?: string;
+  lang?: string;
+  canonical?: string;
+  alternates?: Alternate[];
+};
+
 const {
   title = "Portfolio",
   description = "Jorge Tabuenca – Economics & Business student focused on markets, macroeconomics and AI in finance.",
   lang = "en",
   canonical,
-  alternates = [] as Alternate[],
-} = Astro.props;
+  alternates = [],
+} = Astro.props as LayoutProps;
 ---
 
 <!doctype html>
@@ -25,8 +33,8 @@ const {
 
     {canonical && <link rel="canonical" href={canonical} />}
 
-    {alternates.map((alt) => (
-      <link rel="alternate" hrefLang={alt.lang} href={alt.href} />
+    {alternates.map((alt: Alternate) => (
+      <link rel="alternate" hreflang={alt.lang} href={alt.href} />
     ))}
   </head>
 

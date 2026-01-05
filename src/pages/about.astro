@@ -2,9 +2,17 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Nav from "../components/Nav.astro";
 ---
+<BaseLayout
+  title="About | Jorge"
+  description="Short bio and background of Jorge Tabuenca."
+  lang="en"
+  canonical="https://jorgetabuenca.com/about"
+  alternates={[
+    { lang: "en", href: "https://jorgetabuenca.com/about" },
+    { lang: "es", href: "https://jorgetabuenca.com/es/sobremi" },
+  ]}
+>
 
-<BaseLayout title="About | Jorge" lang="en">
-  <Nav lang="en" />
 
   
   <main>

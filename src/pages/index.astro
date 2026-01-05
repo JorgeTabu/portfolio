@@ -4,16 +4,21 @@ import Nav from "../components/Nav.astro";
 ---
 
 <BaseLayout
-  title="Jorge Tabuenca | Economics & Business"
-  description="Jorge Tabuenca – Bilingual Economics & Business student focused on financial markets, macroeconomics and AI. Open to internships."
+  title="Jorge Tabuenca | Economics & Business Student"
+  description="Bilingual Economics & Business student focused on markets, macroeconomics and AI."
   lang="en"
   canonical="https://jorgetabuenca.com/"
-   alternates={[
+  alternates={[
     { lang: "en", href: "https://jorgetabuenca.com/" },
     { lang: "es", href: "https://jorgetabuenca.com/es/" },
   ]}
+  og={{
+    title: "Jorge Tabuenca – Economics & Business Student",
+    description: "Bilingual profile focused on financial markets, macroeconomics and AI.",
+    image: "https://jorgetabuenca.com/images/jorge.webp",
+    url: "https://jorgetabuenca.com/",
+  }}
 >
-  <Nav lang="en" />
 
   <main>
       <div class="hero">

@@ -5,6 +5,13 @@ type Alternate = {
   lang: string;
   href: string;
 };
+type OpenGraph = {
+  title: string;
+  description: string;
+  image: string;
+  url: string;
+  
+};
 
 type LayoutProps = {
   title?: string;
@@ -12,6 +19,7 @@ type LayoutProps = {
   lang?: string;
   canonical?: string;
   alternates?: Alternate[];
+  og?: OpenGraph;
 };
 
 const {
@@ -20,6 +28,7 @@ const {
   lang = "en",
   canonical,
   alternates = [],
+  og,
 } = Astro.props as LayoutProps;
 ---
 
@@ -36,6 +45,16 @@ const {
     {alternates.map((alt: Alternate) => (
       <link rel="alternate" hreflang={alt.lang} href={alt.href} />
     ))}
+    {og && (
+     <>
+       <meta property="og:title" content={og.title} />
+       <meta property="og:description" content={og.description} />
+       <meta property="og:image" content={og.image} />
+       <meta property="og:url" content={og.url} />
+       <meta property="og:type" content="website" />
+     </>
+   )}
+
   </head>
 
   <body>

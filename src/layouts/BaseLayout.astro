@@ -1,23 +1,34 @@
 ---
 import "../styles/global.css";
+
+type Alternate = {
+  lang: string;
+  href: string;
+};
+
 const {
   title = "Portfolio",
   description = "Jorge Tabuenca – Economics & Business student focused on markets, macroeconomics and AI in finance.",
   lang = "en",
+  canonical,
+  alternates = [] as Alternate[],
 } = Astro.props;
-
 ---
 
 <!doctype html>
 <html lang={lang}>
- <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width" />
-  <title>{title}</title>
-  <meta name="description" content={description} />
-  <link rel="stylesheet" href="/src/styles/global.css" />
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
 
+    {canonical && <link rel="canonical" href={canonical} />}
+
+    {alternates.map((alt) => (
+      <link rel="alternate" hrefLang={alt.lang} href={alt.href} />
+    ))}
+  </head>
 
   <body>
     <slot />

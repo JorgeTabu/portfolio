@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Home -->
+  <url>
+    <loc>https://jorgetabuenca.com/</loc>
+  </url>
+
+  <url>
+    <loc>https://jorgetabuenca.com/es/</loc>
+  </url>
+
+  <!-- About -->
+  <url>
+    <loc>https://jorgetabuenca.com/about</loc>
+  </url>
+
+  <url>
+    <loc>https://jorgetabuenca.com/es/about</loc>
+  </url>
+
+  <!-- Skills -->
+  <url>
+    <loc>https://jorgetabuenca.com/skills</loc>
+  </url>
+
+  <url>
+    <loc>https://jorgetabuenca.com/es/skills</loc>
+  </url>
+
+  <!-- Projects -->
+  <url>
+    <loc>https://jorgetabuenca.com/projects</loc>
+  </url>
+
+  <url>
+    <loc>https://jorgetabuenca.com/es/projects</loc>
+  </url>
+
+  <!-- Contact -->
+  <url>
+    <loc>https://jorgetabuenca.com/contact</loc>
+  </url>
+
+  <url>
+    <loc>https://jorgetabuenca.com/es/contact</loc>
+  </url>
+
+</urlset>

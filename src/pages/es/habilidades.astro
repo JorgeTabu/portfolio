@@ -5,19 +5,24 @@ type Level = "beginner" | "intermediate" | "advanced";
 type Skill = { name: string; level: Level };
 
 const technicalSkills: Skill[] = [
-  { name: "Análisis técnico", level: "advanced" },
+  { name: "ProReal Time", level: "advanced" },
   { name: "Investigación macroeconómica", level: "intermediate" },
   { name: "Python (básico)", level: "beginner" },
   { name: "Astro / Web (básico)", level: "beginner" },
   { name: "SEO y redacción de contenidos", level: "intermediate" },
+  { name: "Excel", level: "intermediate" },
+  { name: "PowerPoint", level: "intermediate" },
+  { name: "Eviews 14", level: "intermediate" },
+  { name: "Notion", level: "intermediate" },
 ];
 
 const personalSkills: Skill[] = [
   { name: "Trabajo en equipo", level: "advanced" },
   { name: "Trabajo bajo presión", level: "advanced" },
   { name: "Comunicación", level: "intermediate" },
-  { name: "Organización y constancia", level: "advanced" },
+  { name: "Constancia", level: "intermediate" },
   { name: "Mentalidad proactiva", level: "advanced" },
+  { name: "Organización", level: "advanced" },
 ];
 
 const levelLabel: Record<Level, string> = {

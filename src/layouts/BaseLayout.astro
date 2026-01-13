@@ -1,23 +1,23 @@
 ---
 import "../styles/global.css";
-import Navbar from "../components/Nav.astro";
+import Nav from "../components/Nav.astro";
 
 type Alternate = {
   lang: string;
   href: string;
 };
+
 type OpenGraph = {
   title: string;
   description: string;
   image: string;
   url: string;
-  
 };
 
 type LayoutProps = {
   title?: string;
   description?: string;
-  lang?: string;
+  lang?: "en" | "es";
   canonical?: string;
   alternates?: Alternate[];
   og?: OpenGraph;
@@ -46,27 +46,25 @@ const {
     {alternates.map((alt: Alternate) => (
       <link rel="alternate" hreflang={alt.lang} href={alt.href} />
     ))}
-    {og && (
-     <>
-       <meta property="og:title" content={og.title} />
-       <meta property="og:description" content={og.description} />
-       <meta property="og:image" content={og.image} />
-       <meta property="og:url" content={og.url} />
-       <meta property="og:type" content="website" />
-       <meta name="twitter:card" content="summary_large_image" />
-       <meta name="twitter:title" content={og.title} />
-       <meta name="twitter:description" content={og.description} />
-       <meta name="twitter:image" content={og.image} />
-     </>
-   )}
 
+    {og && (
+      <>
+        <meta property="og:title" content={og.title} />
+        <meta property="og:description" content={og.description} />
+        <meta property="og:image" content={og.image} />
+        <meta property="og:url" content={og.url} />
+        <meta property="og:type" content="website" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={og.title} />
+        <meta name="twitter:description" content={og.description} />
+        <meta name="twitter:image" content={og.image} />
+      </>
+    )}
   </head>
 
   <body>
-    <Navbar lang={lang} />
-    <div class="container">
-      <slot />
-    </div>
+    <Nav lang={lang} />
+    <slot />
   </body>
-
 </html>

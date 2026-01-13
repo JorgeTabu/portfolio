@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Nav from "../components/Nav.astro";
 
 type Level = "beginner" | "intermediate" | "advanced";
 type Skill = { name: string; level: Level };
@@ -29,7 +28,7 @@ const levelLabel: Record<Level, string> = {
 ---
 
 <BaseLayout title="Skills | Jorge" lang="en">
-  <Nav lang="en" />
+  
 
   <main>
     <h1>Skills</h1>

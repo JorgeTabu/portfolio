@@ -228,6 +228,14 @@ details[open] .chev {
   border-radius: 14px;
   flex-shrink: 0;
 }
+.project-photo {
+  width: 100%;
+  max-height: 360px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin: 0.75rem 0;
+  display: block;
+}
 .hero-text h1 {
   margin-bottom: 0.6rem;
 }

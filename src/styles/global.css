@@ -229,11 +229,12 @@ details[open] .chev {
   flex-shrink: 0;
 }
 .project-photo {
-  width: 100%;
-  max-height: 360px;
+  width: 60%;
+  max-width: 400px;
+  max-height: 220px;
   object-fit: cover;
   border-radius: 14px;
-  margin: 0.75rem 0;
+  margin: 0.75rem auto 0;
   display: block;
 }
 .hero-text h1 {
